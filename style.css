@@ -31,7 +31,7 @@ header {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    background: #173a58;
+    background: linear-gradient(0deg, rgba(23,58,88,1) 0%, rgba(31,111,180,1) 100%);
     padding: 20px 50px;
 }
 header .logo {
@@ -51,10 +51,27 @@ header .nav a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color: #fff;
+    color: #b9c4cd; 
+    padding: 5px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom .2s ease-in-out, color .2s ease-in-out;
+    animation: fadeColorIn 1s ease;
+}
+@keyframes fadeColorIn {
+    0% {
+        opacity: 0;
+        transform: scale(.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+    }
 }
 header .nav a:hover {
-    color: #b9c4cd;
+    color: #fff;
+    border-bottom: 1px solid #fff;
 }
 section#banner {
     grid-area: banner;
@@ -79,14 +96,17 @@ section#articulo .contenido h1 {
     font-weight: 600;
     color: #173a58;
     margin-bottom: 10px;
+    animation: fadeColorIn 1s ease;
 }
 section#articulo .contenido .copete {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 20px;
+    animation: fadeColorIn 1s ease;
 }
 section#articulo .contenido p {
     margin-bottom: 10px;
+    animation: fadeColorIn 1s ease;
 }
 section#articuloImg {
     padding: 40px 0 40px 10px;
@@ -97,6 +117,7 @@ section#articuloImg .img {
     background: url(img/imagen.jpg);
     background-size: cover;
     background-position: center;
+    animation: fadeColorIn 1s ease;
 }
 
 /* Portfolio */
@@ -135,8 +156,14 @@ section#portfolio h1 {
     width: 22.5%;
     border-radius: 5px;
     margin: 1%;
+    transform: scale(1);
+    box-shadow: 0 0 0;
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
 }
-
+.itemGaleria:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px 5px rgb(0 0 0 / 50%);
+}
 footer {
     grid-area: footer;
     width: 100%;
